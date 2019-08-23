@@ -9,7 +9,7 @@ namespace USPark.Models
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
             => optionsBuilder
-                .UseMySql(@"server=localhost;user id=root;password=epicodus;port=3306;database=wildlife_park;");
+                .UseMySql(@"server=localhost;user id=root;password=epicodus;port=3306;database=us_parks;");
 
         public USParkContext(DbContextOptions options) : base(options)
         {

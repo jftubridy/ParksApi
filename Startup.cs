@@ -10,6 +10,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using USPark.Models;
 
 namespace USPark
 {
@@ -25,7 +26,13 @@ namespace USPark
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            //I Think I need this for swagger but I'm not sure
+            //     services.AddDbContext<USParkContext>(opt =>
+            // opt.UseInMemoryDatabase("USPark"));
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            // Register the Swagger services
+            services.AddSwaggerDocument();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -41,6 +48,11 @@ namespace USPark
                 app.UseHsts();
             }
             //was adding swagger but had to revert
+            app.UseStaticFiles();
+
+            // Register the Swagger generator and the Swagger UI middlewares
+            app.UseOpenApi();
+            app.UseSwaggerUi3();
 
             // app.UseHttpsRedirection();
             app.UseMvc();

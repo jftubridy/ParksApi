@@ -15,6 +15,7 @@ _An API to link to parks in the united states._
 * _enter dotnet restore_
 * _enter dotnet ef database update_
 * _enter dotnet run_
+* _use http://localhost:5000/api/parks to interact with it on postman_
 * _you can then go to http://localhost:5000/swagger/v1/swagger.json in your browser to see the swagger display_
 
 ## Technologies Used

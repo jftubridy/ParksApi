@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace USPark.Migrations
 {
-    public partial class Initial : Migration
+    public partial class newParks : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -13,10 +13,10 @@ namespace USPark.Migrations
                 {
                     ParkId = table.Column<int>(nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    Species = table.Column<string>(nullable: true),
                     Name = table.Column<string>(nullable: true),
-                    Age = table.Column<int>(nullable: false),
-                    Gender = table.Column<string>(nullable: true)
+                    City = table.Column<string>(nullable: true),
+                    State = table.Column<string>(nullable: true),
+                    Age = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {

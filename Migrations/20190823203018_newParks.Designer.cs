@@ -8,8 +8,8 @@ using USPark.Models;
 namespace USPark.Migrations
 {
     [DbContext(typeof(USParkContext))]
-    [Migration("20190819160201_Initial")]
-    partial class Initial
+    [Migration("20190823203018_newParks")]
+    partial class newParks
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -25,11 +25,11 @@ namespace USPark.Migrations
 
                     b.Property<int>("Age");
 
-                    b.Property<string>("Gender");
+                    b.Property<string>("City");
 
                     b.Property<string>("Name");
 
-                    b.Property<string>("Species");
+                    b.Property<string>("State");
 
                     b.HasKey("ParkId");
 

@@ -9,9 +9,9 @@ namespace USPark.Models
     {
         [Key]
         public int ParkId { get; set; }
-        public string Species { get; set; }
+        public string State { get; set; }
+        public string City { get; set; }
         public string Name { get; set; }
         public int Age { get; set; }
-        public string Gender { get; set; }
     }
 }

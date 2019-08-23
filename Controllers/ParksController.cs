@@ -49,5 +49,11 @@ namespace USPark.Controllers
             _db.Parks.Remove(parkToDelete);
             _db.SaveChanges();
         }
+        // GET api/parks/city
+        [HttpGet("{city}")]
+        public ActionResult<Park> Get(string city)
+        {
+            return _db.Parks.FirstOrDefault(x => x.Park.City == city);
+        }
     }
 }
